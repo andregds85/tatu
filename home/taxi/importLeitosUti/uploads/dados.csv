@@ -1,0 +1,18 @@
+internacao;cns;nomePac;idade;convenio;	tipoLeito;vm;hospitalOrigem;CRIH;unidadeDestino;status;obs
+20/05/20;123131231311;Fulano da Silva;20;privado;Enfermaria;sim;Hospital do Santo;sdasdasd;Hospital de Florianopolis;CONFIRMADO;
+10/05/20;123655454648;Segundo Candidato ;60;SUS;UTI COVID;SIM;Hospital do Santo;123123;Hospital de Florianopolis;SUSPEITO;
+10/05/20;123655454648;Segundo Candidato ;60;SUS;UTI COVID;SIM;HOSPITAL Santin;123123;Hospital de Florianopolis;DESCARTADO;
+12/05/20;123655454648;Terceiro Candidato;40;privado;Enfermaria;SIM;Hospital do Santo;123123;Hospital de Florianopolis;CONFIRMADO;
+13/05/20;123655454648;Quarto Candidato;66;privado;UTI COVID;SIM;HOSPITAL Santin;123123;Hospital de Florianopolis;CONFIRMADO;
+15/05/20;123655454648;Quinto Candidado;64;privado;UTI COVID;SIM;HOSPITAL Santin;123123;Hospital de Florianopolis;CONFIRMADO;
+16/05/20;123655454648;Sexto Candidado;30;privado;UTI COVID;SIM;HOSPITAL Santin;123123;Hospital de Florianopolis;SUSPEITO;
+17/05/20;123655454648;Paciente um ;28;privado;UTI COVID;SIM;Hospital do Santo;123123;Hospital de Florianopolis;SUSPEITO;
+18/05/20;123655454648;Paciente dois ;32;privado;Enfermaria;SIM;Hospital do Santo;123123;Hospital de Florianopolis;SUSPEITO;
+19/05/20;123655454648;Paciente Três;13;privado;Enfermaria;SIM;Hospital do Santo;123123;Hospital de Florianopolis;DESCARTADO;
+20/05/20;123655454648;Paciente Quatro;22;privado;Enfermaria;SIM;Hospital Santin;123123;Hospital de Florianopolis;DESCARTADO;
+30/05/20;123655454648;Paciente Cinco;22;Privado;Enfermaria;SIM;Hospital do Santo;123123;Hospital de Florianopolis;DESCARTADO;
+25/05/20;123655454648;Paciente Seis;41;Privado;Enfermaria;SIM;Hospital do Santo;123123;Hospital de Florianopolis;CONFIRMADO;
+26/05/20;123655454648;Paciente Sete;25;SUS;Enfermaria;SIM;Hospital do Santo;123123;Hospital de Florianopolis;CONFIRMADO;
+27/05/20;123655454648;Paciente Oito;63;SUS;UTI COVID;SIM;Hospital do Santo;123123;Hospital de Florianopolis;CONFIRMADO;
+12/05/20;123655454648;Paciente nove;22;SUS;UTI COVID;SIM;Hospital do Santo;123123;Hospital de Florianopolis;CONFIRMADO;
+13/05/20;123655454648;Paciente Dez;21;SUS;UTI COVID;SIM;Hospital do Santo;123123;Hospital de Florianopolis;SUSPEITO;
