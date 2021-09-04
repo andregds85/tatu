@@ -23,6 +23,29 @@
         <a class="nav-link" href="fsv.php">Inicio <span class="sr-only">(Página atual)</span></a>
       </li>
      
+
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Corridas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="CadastrodeCorridas.php">Cadastro de Corridas</a>
+
+        </div>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           CSV
@@ -40,7 +63,7 @@
         
          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Pacientes internados             
+        CadastrodeCorridas.php          
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="frmCadastra.php">Cadastro de Pacientes Internados em Leitos de Uti Confirmados/Suspeitos/Descartados</a>
