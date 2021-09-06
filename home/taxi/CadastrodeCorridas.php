@@ -9,12 +9,21 @@
             }
         </style>
     </head>
-<?php include("topo.php"); ?>
+    <?php include("topoLimpo.php"); ?>
+
+<SCRIPT> 
+function k(i) {
+	var v = i.value.replace(/\D/g,'');
+	v = (v/100).toFixed(2) + '';
+	v = v.replace(".", ",");
+	v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+	v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
+	i.value = v;
+}
+</script>
 
 <form method="post" action="recebe.php">
             <div id="formulario">
-
-
 
                  
       <div class="alert alert-light" role="alert">
@@ -38,9 +47,9 @@ Se tiver 6 corridas aperte 6 vezes o botão Adicionar corridas</div>
             $('#add-campo').click(function () {
                 cont++;
                 //https://api.jquery.com/append/
-                $('#formulario').append('<div class="form-group " id="campo' + cont + '"><label>Destino: </label><input type="text" name="destino[]" placeholder="Especifique o Destino"> <button type="button" id="' + cont + '" class="btn-apagar"> Remover Corrida</button></div>');
-                $('#formulario').append('<div class="form-group " id="campo' + cont + '"><label>Pagamento: </label><input type="text" name="pagamento[]" placeholder="Forma de Pagamento"> <button type="button" id="' + cont + '"');
-                $('#formulario').append('<div class="form-group" id="campo' + cont + '"><label>Valor: </label><input type="text" name="valor[]" placeholder="Valor"> <button type="button" id="' + cont + '"');
+                $('#formulario').append('<div class="form-group " id="campo' + cont + '"><label>Destino: </label><input type="text" class="form-control" name="destino[]" placeholder="Especifique o Destino"> <button type="button" id="' + cont + '" class="btn-apagar"> Remover Corrida</button></div>');
+                $('#formulario').append('<div class="form-group " id="campo' + cont + '"><label>Pagamento: </label>  <select id="dinhero" class="form-control" name="pagamento[]"><option selected></option><option value="Cartão">Cartão</option><option value="Dinheiro">Dinheiro </option></select><button type="button" id="' + cont + '"');
+                $('#formulario').append('<div class="form-group" id="campo' + cont + '"><label>Valor: </label><input type="text" class="form-control" onkeyup="k(this);" name="valor[]" placeholder="Valor" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"> <button type="button" id="' + cont + '"');
 
 
             });
@@ -57,7 +66,7 @@ Se tiver 6 corridas aperte 6 vezes o botão Adicionar corridas</div>
 
      
 
-
+     
 
 
 
