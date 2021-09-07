@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1
--- http://www.phpmyadmin.net
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: 20-Maio-2020 às 19:51
--- Versão do servidor: 5.7.11
--- PHP Version: 7.0.3
+-- Host: localhost:3306
+-- Tempo de geração: 07-Set-2021 às 07:56
+-- Versão do servidor: 5.7.24
+-- versão do PHP: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `covid`
+-- Banco de dados: `tatu`
 --
 
 -- --------------------------------------------------------
@@ -43,6 +44,24 @@ CREATE TABLE `altautilc` (
 INSERT INTO `altautilc` (`id`, `internacao`, `nome`, `dataAlta`, `obs`, `status`, `grafico`) VALUES
 (1, '2020-05-19', 'Fulano Silveira', '2020-05-23', 'data', 'ALTA', 'CONFIRMADO'),
 (2, '2020-05-03', 'Fulano Silveira', '2020-05-08', 'teste', 'ALTA', 'SUSPEITO');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `corridas`
+--
+
+CREATE TABLE `corridas` (
+  `Id` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `pagamento` varchar(100) NOT NULL,
+  `valor` varchar(100) NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `data` varchar(100) NOT NULL,
+  `dia` varchar(20) NOT NULL,
+  `mes` varchar(20) NOT NULL,
+  `ano` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -130,57 +149,74 @@ INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `usuario`, `senha`, `cnes`) V
 (7, 'admin', 'admin', 'admin@admin', 'a3175a452c7a8fea80c62a198a40f6c9', '42c17');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `altautilc`
+-- Índices para tabela `altautilc`
 --
 ALTER TABLE `altautilc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `estabsaude`
+-- Índices para tabela `corridas`
+--
+ALTER TABLE `corridas`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Índices para tabela `estabsaude`
 --
 ALTER TABLE `estabsaude`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ocupainternadouti`
+-- Índices para tabela `ocupainternadouti`
 --
 ALTER TABLE `ocupainternadouti`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `altautilc`
+-- AUTO_INCREMENT de tabela `altautilc`
 --
 ALTER TABLE `altautilc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `estabsaude`
+-- AUTO_INCREMENT de tabela `corridas`
+--
+ALTER TABLE `corridas`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT de tabela `estabsaude`
 --
 ALTER TABLE `estabsaude`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `ocupainternadouti`
+-- AUTO_INCREMENT de tabela `ocupainternadouti`
 --
 ALTER TABLE `ocupainternadouti`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
