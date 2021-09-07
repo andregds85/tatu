@@ -70,7 +70,7 @@ function k(i) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Controle de Corridas</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
