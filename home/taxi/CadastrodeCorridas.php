@@ -11,9 +11,6 @@ $anoReduzido=date('y');
 $ano='20'.$anoReduzido;
 
 
-
-
-
 ?>
 <head>  
         <meta charset="utf-8">
@@ -27,10 +24,7 @@ $ano='20'.$anoReduzido;
     
     <?php
     
-    
     include("../conecta.php"); 
-
-
 
 
     if(isset($_POST['btnSubmit'])){
@@ -43,11 +37,11 @@ $ano='20'.$anoReduzido;
                 array_push($arr,$user);
             }
             
-            $sql = "INSERT INTO corridas (Name, pagamento, valor, usuario,data,dia,mes,ano)
+            $sql = "INSERT INTO corridas (destino, pagamento, valor, usuario,data,dia,mes,ano)
                 VALUES ('$arr[0]', '$arr[1]', '$arr[2]','$consulta','$today','$dia','$mes','$ano')";
         
             if ($con->query($sql) === TRUE) {
-                echo "Novo Registro foi Inserido";
+                echo "Registro foi Inserido";
             } else {
                 echo "Error: " . $sql . "<br>" . $con->error;
             }
@@ -85,6 +79,7 @@ function k(i) {
 </head>
 <body>
 
+
   <div class="container">
     <div class="jumbotron">
       <h1 class="display-4 text-center">Controle de Corridas<br>Cadastre todas as corridas do dia</h1><hr>
@@ -102,18 +97,44 @@ function k(i) {
                 <button type="button" class="remove btn btn-danger d-none">Remover</button>
               </div>
               <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" name="array[0][name]">
+                <label for="name">Destino:</label>
+                <input type="text" class="form-control" name="array[0][destino]">
               </div>
               <div class="form-group">
-                <label for="pagamento">Forma de Pagamento:</label>
-                <input type="text" class="form-control" name="array[0][pagamento]">
+
+                <label for="pagamento">Forma de Pagamento:</label><br>
+                
+
+                <p>Selecione a Forma de Pagamento</p>
+
+<select id="mySelect" onchange="myFunction()">
+<option value=""></option>
+  <option value="dinheiro">Dinheiro</option>
+  <option value="cartao">Cartão</option>
+</select>
+
+<p>Selecione a Forma de Pagamento</p>
+
+<p id="demo"></p>
+<input id="demo" type="text" class="form-control" name="array[0][pagamento]" value="">
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " +x;
+  document.querySelector('input[name="array[0][pagamento]"]').value = x;
+
+}
+</script>
+
+
               </div>
               <div class="form-group">
                 <label for="valor">Valor:</label>
                 <input type="text" class="form-control"  onkeyup="k(this);" name="array[0][valor]" placeholder="Valor" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
               </div>
                 
+
             </div>
           </div>
         </div>
