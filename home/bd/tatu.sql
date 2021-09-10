@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 07-Set-2021 às 07:56
+-- Tempo de geração: 10-Set-2021 às 21:59
 -- Versão do servidor: 5.7.24
--- versão do PHP: 7.4.16
+-- versão do PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +53,7 @@ INSERT INTO `altautilc` (`id`, `internacao`, `nome`, `dataAlta`, `obs`, `status`
 
 CREATE TABLE `corridas` (
   `Id` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL,
+  `destino` varchar(50) NOT NULL,
   `pagamento` varchar(100) NOT NULL,
   `valor` varchar(100) NOT NULL,
   `usuario` varchar(100) NOT NULL,
@@ -62,6 +62,16 @@ CREATE TABLE `corridas` (
   `mes` varchar(20) NOT NULL,
   `ano` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `corridas`
+--
+
+INSERT INTO `corridas` (`Id`, `destino`, `pagamento`, `valor`, `usuario`, `data`, `dia`, `mes`, `ano`) VALUES
+(1, 'sdasdsdasd', 'cartao', '25,00', 'admin@admin', '09/09/2021', '09', '09', '2021'),
+(2, 'sdasdsdasd', 'dinheiro', '36,00', 'admin@admin', '08/09/2021', '09', '09', '2021'),
+(3, 'sdasdsdasd', 'cartao', '30,00', 'admin@admin', '09/09/2021', '09', '09', '2021'),
+(4, 'sdasdsdasd', 'dinheiro', '25,00', 'admin@admin', '09/09/2021', '09', '09', '2021');
 
 -- --------------------------------------------------------
 
@@ -196,7 +206,7 @@ ALTER TABLE `altautilc`
 -- AUTO_INCREMENT de tabela `corridas`
 --
 ALTER TABLE `corridas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `estabsaude`

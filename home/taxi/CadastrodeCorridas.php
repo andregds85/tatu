@@ -3,7 +3,7 @@
 include("topoLimpo.php"); 
 include ("session.php");
 
-echo $consulta=$_SESSION['usr'];    
+$consulta=$_SESSION['usr'];    
 $today = date("d/m/20y");
 $dia=date('d');
 $mes=date('m');
@@ -41,7 +41,19 @@ $ano='20'.$anoReduzido;
                 VALUES ('$arr[0]', '$arr[1]', '$arr[2]','$consulta','$today','$dia','$mes','$ano')";
         
             if ($con->query($sql) === TRUE) {
-                echo "Registro foi Inserido";
+             
+
+              ?>
+
+              <script> alert("Destino Adicionada com Sucesso"); 
+              
+             
+
+               </script>
+
+
+              <?php
+
             } else {
                 echo "Error: " . $sql . "<br>" . $con->error;
             }
@@ -49,6 +61,15 @@ $ano='20'.$anoReduzido;
     }
     
 ?>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "Você Selecionou: " +x;
+  document.querySelector('input[name="array[0][pagamento]"]').value = x;
+}
+</script>
+
 
 
 <SCRIPT> 
@@ -61,10 +82,12 @@ function k(i) {
 	i.value = v;
 }
 </script>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Controle de Corridas</title>
+  <title>Destino das Corridas</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
@@ -82,13 +105,12 @@ function k(i) {
 
   <div class="container">
     <div class="jumbotron">
-      <h1 class="display-4 text-center">Controle de Corridas<br>Cadastre todas as corridas do dia</h1><hr>
+      <h1 class="display-4 text-center">Destino das Corridas<br>Cadastre todas as corridas do dia</h1><hr>
       <form action="" method="post">
 
         <div id="main">
           <div class="card mb-3">
             <div class="card-body text-right">
-              <button type="button" class="btn btn-success" id="add">Adicionar Corrida</button>
             </div>
           </div>
           <div class="card mb-3 clone">
@@ -103,9 +125,7 @@ function k(i) {
               <div class="form-group">
 
                 <label for="pagamento">Forma de Pagamento:</label><br>
-                
 
-                <p>Selecione a Forma de Pagamento</p>
 
 <select id="mySelect" onchange="myFunction()">
 <option value=""></option>
@@ -117,16 +137,6 @@ function k(i) {
 
 <p id="demo"></p>
 <input id="demo" type="text" class="form-control" name="array[0][pagamento]" value="">
-
-<script>
-function myFunction() {
-  var x = document.getElementById("mySelect").value;
-  document.getElementById("demo").innerHTML = "You selected: " +x;
-  document.querySelector('input[name="array[0][pagamento]"]').value = x;
-
-}
-</script>
-
 
               </div>
               <div class="form-group">
@@ -148,6 +158,4 @@ function myFunction() {
   <script src="script.js"></script>
 </body>
 </html>
-
-
 

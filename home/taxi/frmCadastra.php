@@ -30,14 +30,14 @@
       
       <!-- Fluid Jumbotron --> 
       
-   <div class="container-fluid">      
+  <div class="container-fluid">      
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Covid 19</h1>
     <p class="lead">Cadastro de pacientes internados em leitos de Uti Suspeitos / Confirmados</p>
   </div>
   </div>
-   </div>    
+  </div>    
       
        
  <div class="container-fluid">    

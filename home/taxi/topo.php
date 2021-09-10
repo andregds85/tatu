@@ -28,34 +28,31 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Corridas
+          Destino das Corridas
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-         <a class="dropdown-item" href="CadastrodeCorridas.php">Cadastro de Corridas</a>
-
+      
+           <a class="dropdown-item" href="CadastrodeCorridas.php">Cadastro de Destino das Corridas</a>
+           <a class="dropdown-item" href="ListarCorridas.php">Listar Destino das Corridas</a>
         </div>
       </li>
-
-
-
-
-
-
-
-
+      
+   
 
 
 
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          CSV
+          Completando Corridas
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-         <a class="dropdown-item" href="import.php">Importar estabelecimento de Saude</a>
+        <a class="dropdown-item" href="import.php">Completando Corrida</a>
+        <a class="dropdown-item" href="import.php">Listar Completando Corrida</a>
 
-            
+        <a class="dropdown-item" href="import.php">Importar estabelecimento de Saude</a>
+   
          
-                     
+                 
             
      
         </div>
