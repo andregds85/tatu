@@ -51,9 +51,8 @@ $obs="Sem observação";
 
 include("../conecta.php");   
  
-// conexão e seleção do banco de dados
+// conexão e seleção do banco de dados 
 $con = mysqlI_connect($host, $user, $pass, $db);
-
 $dados=("insert into ocupainternadouti
 (internacao,cns,nomePac,idade,convenio,tipoLeito,vm,hospitalOrigem,CRIH,unidadeDestino,status,obs) values('$internacao', '$cns','$nomePaciente','$idade','$convenio','$tipoLeito','$vm','$hospitalOrigem',' $CRIH ','$unidadeDestino', '$status','$obs')");  
 

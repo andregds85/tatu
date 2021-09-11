@@ -46,12 +46,11 @@
           Completando Corridas
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="import.php">Completando Corrida</a>
+        <a class="dropdown-item" href="completaCorrida.php">Completando Corrida</a>
         <a class="dropdown-item" href="import.php">Listar Completando Corrida</a>
-
         <a class="dropdown-item" href="import.php">Importar estabelecimento de Saude</a>
    
-         
+      
                  
             
      

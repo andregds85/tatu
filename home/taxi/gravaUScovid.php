@@ -15,7 +15,7 @@ include("../conecta.php");
 $sql = "SELECT * FROM usuarios";
 $res = mysqli_query($con, $sql);
  
-// conta o número de registros
+// conta o nï¿½mero de registros
 $total = mysqli_num_rows($res);
  
  "Total de Resultados: " . $total . "<br>";
