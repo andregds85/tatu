@@ -182,3 +182,7 @@ echo "</div>";
 
 
 ?>
+
+
+<input type="button" value="inprimir" onclick="window.print()"/>
+
