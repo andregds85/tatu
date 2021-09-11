@@ -168,17 +168,34 @@ echo "<table>";
 
 } 
 
+?>
+<table class="table table-hover">
+<thead>
+  <tr>
+  <th scope="col">Total no Cartao </th>
+    <th scope="col">Total no Dinheiro</th>
+    <th scope="col">Total no Dia</th>
 
-echo "<div class='container-fluid'>";
+  </tr>
 
-echo "Total no Cartao : ".$cartao; 
-echo "<br>";
-echo "Total no Dinheiro : ".$dinheiro; 
-echo "<br>";
-echo "Total do dia: ".$soma; 
+<?php
 
 
-echo "</div>";
+echo "<tr>";
+
+echo "<td scope='col'>";
+echo $cartao;
+echo "</td>";
+ 
+echo "<td scope='col'>";
+echo $dinheiro;
+echo "</td>";
+
+echo "<td scope='col'>";
+echo $soma;
+echo "</td>";
+
+echo "</tr>";
 
 
 ?>
