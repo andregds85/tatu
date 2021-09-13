@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 10-Set-2021 às 21:59
+-- Tempo de geração: 13-Set-2021 às 22:02
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.4.11
 
@@ -48,6 +48,31 @@ INSERT INTO `altautilc` (`id`, `internacao`, `nome`, `dataAlta`, `obs`, `status`
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `completa`
+--
+
+CREATE TABLE `completa` (
+  `id` int(11) NOT NULL,
+  `dataAtual` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dia` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mes` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ano` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `horaInicial` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `horaFinal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `completa`
+--
+
+INSERT INTO `completa` (`id`, `dataAtual`, `dia`, `mes`, `ano`, `nome`, `horaInicial`, `horaFinal`) VALUES
+(11, '13/09/2021', '13', '09', '2021', 'asdasdasd', '20:57', '00:57'),
+(12, '13/09/2021', '13', '09', '2021', 'asdasdasdasdasdasdasdasd', '22:59', '21:59');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `corridas`
 --
 
@@ -71,7 +96,8 @@ INSERT INTO `corridas` (`Id`, `destino`, `pagamento`, `valor`, `usuario`, `data`
 (1, 'sdasdsdasd', 'cartao', '25,00', 'admin@admin', '09/09/2021', '09', '09', '2021'),
 (2, 'sdasdsdasd', 'dinheiro', '36,00', 'admin@admin', '08/09/2021', '09', '09', '2021'),
 (3, 'sdasdsdasd', 'cartao', '30,00', 'admin@admin', '09/09/2021', '09', '09', '2021'),
-(4, 'sdasdsdasd', 'dinheiro', '25,00', 'admin@admin', '09/09/2021', '09', '09', '2021');
+(4, 'sdasdsdasd', 'dinheiro', '25,00', 'admin@admin', '09/09/2021', '09', '09', '2021'),
+(5, 'asdasdasdas', 'cartao', '1.200,00', 'admin@admin', '13/09/2021', '13', '09', '2021');
 
 -- --------------------------------------------------------
 
@@ -169,6 +195,12 @@ ALTER TABLE `altautilc`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `completa`
+--
+ALTER TABLE `completa`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `corridas`
 --
 ALTER TABLE `corridas`
@@ -203,10 +235,16 @@ ALTER TABLE `altautilc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de tabela `completa`
+--
+ALTER TABLE `completa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT de tabela `corridas`
 --
 ALTER TABLE `corridas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `estabsaude`
