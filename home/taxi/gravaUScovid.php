@@ -1,14 +1,14 @@
 <?php  include ("session.php"); 
 
- $nome=$_POST["nome"];
- $sobrenome=$_POST["sobrenome"];
- $usuario=$_POST["usuario"];
- $senha=$_POST["Senha"];
- $repetirSenha=$_POST["repetirSenha"];
- $gravaSenha=md5($senha);   
+  $nome=$_POST["nome"];
+  $sobrenome=$_POST["sobrenome"];
+  $usuario=$_POST["usuario"];
+  $senha=$_POST["Senha"];
+  $repetirSenha=$_POST["repetirSenha"];
+  $gravaSenha=md5($senha);   
       
     
-include("../conecta.php");   
+ include("../conecta.php"); 
 
  
 // executa a consulta
@@ -51,13 +51,15 @@ Cadastro Negado - Seu E-Mail ja consta no Sistema.
           
       }
       
-                
+
+
+               
           if ($senha == $repetirSenha)
           {
               
               echo "";
           }else{
-              include("topo.php");
+              include("topoLimpo.php");
               
             echo "<div class='alert alert-primary' role='alert'>
         Senhas Diferentes

@@ -26,7 +26,6 @@ $ano='20'.$anoReduzido;
     
     include("../conecta.php"); 
 
-
     if(isset($_POST['btnSubmit'])){
         $items = $_POST['array'];
         
@@ -46,10 +45,7 @@ $ano='20'.$anoReduzido;
               ?>
 
               <script> alert("Destino Adicionada com Sucesso"); 
-              
-             
-
-               </script>
+              </script>
 
 
               <?php
@@ -82,6 +78,30 @@ function k(i) {
 	i.value = v;
 }
 </script>
+
+
+
+
+
+<script>
+
+function onlynumber(evt) {
+   var theEvent = evt || window.event;
+   var key = theEvent.keyCode || theEvent.which;
+   key = String.fromCharCode( key );
+   //var regex = /^[0-9.,]+$/;
+   var regex = /^[0-9.]+$/;
+   if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+   }
+}
+
+</script>
+
+
+
+
 
 
 <!DOCTYPE html>

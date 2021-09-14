@@ -24,19 +24,16 @@
       
    <div class="container-fluid">      
   <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Covid19 </h1>
-    <p class="lead">Listando os Usuários</p>
+
   </div>
-  </div>
-   </div>    
+  </div>    
       
       
    <!-- Listar Usuário dentro da pasta Buscar usuarios-->      
       
  <div class="container-fluid">    
  <div class="card">
-  <h5 class="card-header">Usuários Cadastrados</h5>
+ <h5 class="card-header">Usuários Cadastrados</h5>
 
 </div>
 </div>

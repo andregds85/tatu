@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 13-Set-2021 às 22:02
+-- Tempo de geração: 14-Set-2021 às 21:51
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.4.11
 
@@ -59,16 +59,17 @@ CREATE TABLE `completa` (
   `ano` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nome` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `horaInicial` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `horaFinal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `horaFinal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `codPlaca` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kInicial` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kfinal` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gnv` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gasolina` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lavacao` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `outros` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vale` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comissao` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `completa`
---
-
-INSERT INTO `completa` (`id`, `dataAtual`, `dia`, `mes`, `ano`, `nome`, `horaInicial`, `horaFinal`) VALUES
-(11, '13/09/2021', '13', '09', '2021', 'asdasdasd', '20:57', '00:57'),
-(12, '13/09/2021', '13', '09', '2021', 'asdasdasdasdasdasdasdasd', '22:59', '21:59');
 
 -- --------------------------------------------------------
 
@@ -173,16 +174,16 @@ CREATE TABLE `usuarios` (
   `nome` varchar(50) NOT NULL,
   `sobrenome` varchar(50) NOT NULL,
   `usuario` varchar(50) NOT NULL,
-  `senha` varchar(50) NOT NULL,
-  `cnes` varchar(200) NOT NULL
+  `senha` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `usuario`, `senha`, `cnes`) VALUES
-(7, 'admin', 'admin', 'admin@admin', 'a3175a452c7a8fea80c62a198a40f6c9', '42c17');
+INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `usuario`, `senha`) VALUES
+(7, 'admin', 'admin', 'admin@admin', 'a3175a452c7a8fea80c62a198a40f6c9'),
+(8, 'admin1@admin', 'admin1@admin', 'admin1@admin', '815db043b970e0a9b6ab10b64cea710c');
 
 --
 -- Índices para tabelas despejadas
@@ -238,7 +239,7 @@ ALTER TABLE `altautilc`
 -- AUTO_INCREMENT de tabela `completa`
 --
 ALTER TABLE `completa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `corridas`
@@ -262,7 +263,7 @@ ALTER TABLE `ocupainternadouti`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

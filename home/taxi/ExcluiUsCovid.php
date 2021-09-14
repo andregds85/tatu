@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <!-- Meta tags Obrigatórias -->
+    <!-- Meta tags Obrigatï¿½rias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -18,7 +18,7 @@
  </head>
  <body>
  
-<!-- Topo da Página -->      
+<!-- Topo da Pï¿½gina -->      
       
 <?php include("topo.php"); 
 
@@ -26,7 +26,7 @@
 $us_id=$_GET['us_id'];
   
 
-include("../conecta.php");
+include("../conecta.php"); 
 
  
 // executa a comando

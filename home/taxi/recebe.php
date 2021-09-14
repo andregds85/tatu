@@ -16,29 +16,5 @@ include("../conecta.php");
  echo "soma(a) = ".array_sum($total)."\n";
 
 
- 
-
- 
- 
-  
-  
-  
-           
- 
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  include("rodapeLimpo.php"); ?>
+ 
