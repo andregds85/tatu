@@ -51,18 +51,41 @@ function valida()
 {
  if(document.regform.nome.value=="" || document.regform.nome.value.length < 4)
 {
-alert( "Preencha campo título corretamente!" );
+alert( "Preencha campo Nome corretamente!" );
 regform.nome.focus();
 return false;
 }
-
-if(document.regform.quantidade.value=="")
+if(document.regform.codPlaca.value=="" || document.regform.codPlaca.value.length < 3)
 {
-alert( "Preencha campo quantidade corretamente!" );
-regform.quantidade.focus();
+alert( "Preencha campo Código da Placa corretamente!" );
+regform.codPlaca.focus();
 return false;
 }
 
+
+if(document.regform.kInicial.value=="" || document.regform.kInicial.value.length < 1)
+{
+alert( "Preencha campo Kilometro Inicial corretamente!" );
+regform.kInicial.focus();
+return false;
+}
+
+
+if(document.regform.kfinal.value=="" || document.regform.kfinal.value.length < 1)
+{
+alert( "Preencha campo Kilometro Final corretamente!" );
+regform.kfinal.focus();
+return false;
+}
+
+
+
+if(document.regform.vale.value=="" || document.regform.vale.value.length < 1)
+{
+alert( "Preencha campo Vale corretamente!" );
+regform.vale.focus();
+return false;
+}
 
 
  return true;
@@ -80,42 +103,7 @@ return false;
 
 </head>
 
-<?php
-    
-    include("../conecta.php"); 
 
-    if(isset($_POST['btnSubmit'])){
-        $items = $_POST['array'];
-        
-        foreach ($items as $item){
-            
-            $arr = array();
-            foreach ($item as $user){
-                array_push($arr,$user);
-            }
-            
-            $sql = "INSERT INTO completa (dataAtual, dia, mes, ano, nome, horaInicial, horaFinal,codPlaca,kInicial,kfinal,gnv,gasolina,lavacao,outros,vale,comissao)
-                VALUES ('$today','$dia','$mes','$ano','$arr[1]','$arr[2]','$arr[3]','$arr[4]','$arr[5]','$arr[6]','$arr[7]','$arr[8]','$arr[9]','$arr[10]','$arr[11]','$arr[12]')";
-        
-            if ($con->query($sql) === TRUE) {
-             
-              ?>
-
-              <script> alert("Gerenciamento Diário Cadastrado com Sucesso"); 
-              
-             
-               </script>
-
-
-              <?php
-
-            } else {
-                echo "Error: " . $sql . "<br>" . $con->error;
-            }
-        }
-    }
-    
-?>
 
 
  <div class="alert alert-dark" role="alert">
@@ -123,11 +111,16 @@ return false;
 </div>
 
     <div class="container">
-    <form action="" method="post" NAME="regform" onsubmit="return valida()">>
-  <div class="form-row">
+
+
+    <FORM ACTION="GravaCompletaCorrida.php" METHOD="POST" enctype="multipart/form-data" NAME="regform" onsubmit="return valida()">
+
+
+
+    <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Data Atual</label>
-      <input type="text" class="form-control" id="inputEmail4" name="array[0][dataAtual]" value="<?php echo $today; ?>" placeholder="<?php echo $today; ?>" readonly>
+      <input type="text" class="form-control" id="inputEmail4" name="dataAtual" value="<?php echo $today; ?>" placeholder="<?php echo $today; ?>" readonly>
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Dia</label>
@@ -147,84 +140,82 @@ return false;
   </div>
 
 
-
   <div class="form-group">
-    <label for="inputAddress">Seu Nome</label>
-    <input type="text" class="form-control" id="inputAddress" name="array[0][nome]" placeholder="Seu Nome" >
+    <label for="inputAddress">Nome</label>
+    <input type="text" class="form-control" id="inputAddress" name="nome" placeholder="" >
   </div>
-
 
 
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Hora Inicial</label>
-      <input type="time" class="form-control" id="inputEmail4" name="array[0][horaInicio]"  value="<?php echo $mes; ?>" placeholder="<?php echo $mes; ?>">
+      <input type="time" class="form-control" id="inputEmail4" name="horaInicio"  value="<?php echo $mes; ?>" placeholder="<?php echo $mes; ?>">
     </div>
 
     <div class="form-group col-md-6">
       <label for="inputPassword4">Hora Final</label>
-      <input type="time" class="form-control" id="inputPassword4" name="array[0][horaFinal]" value="<?php echo $ano; ?>" placeholder="<?php echo $ano; ?>">    </div>
+      <input type="time" class="form-control" id="inputPassword4" name="horaFinal" value="<?php echo $ano; ?>" placeholder="<?php echo $ano; ?>">    </div>
   </div>
 
 
 
   <div class="form-group">
     <label for="inputAddress">Código da Placa</label>
-    <input type="text" class="form-control" id="inputAddress" name="array[0][codPlaca]" placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />
+    <input type="text" class="form-control" id="inputAddress" name="codPlaca" placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />
   </div>
 
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Kilometro Inicial</label>
-      <input type="text" class="form-control" id="inputEmail4" name="array[0][kInicial]"   placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />
+      <input type="text" class="form-control" id="inputEmail4" name="kInicial"   placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />
    </div>
 
 
   <div class="form-group col-md-6">
       <label for="inputPassword4">Kilometro Final</label>
-      <input type="text" class="form-control" id="inputPassword4" name="array[0][kfinal]"  placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />    </div>
+      <input type="text" class="form-control" id="inputPassword4" name="kfinal"  placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" />    </div>
   </div>
 
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">GNV</label>
-      <input type="text" class="form-control" onkeyup="k(this);" id="inputEmail4" name="array[0][gnv]"   placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+      <input type="text" class="form-control" onkeyup="k(this);" id="inputEmail4" name="gnv"   placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
     </div>
 
 
     <div class="form-group col-md-6">
       <label for="inputPassword4">Gasolina</label>
-      <input type="text" class="form-control"  onkeyup="k(this);" id="inputPassword4" name="array[0][gasolina]"  placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">    </div>
+      <input type="text" class="form-control"  onkeyup="k(this);" id="inputPassword4" name="gasolina"  placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">    </div>
   </div>
 
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Lavação</label>
-      <input type="text" class="form-control"  onkeyup="k(this);" id="inputEmail4" name="array[0][lavacao]"   placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+      <input type="text" class="form-control"  onkeyup="k(this);" id="inputEmail4" name="lavacao"   placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
     </div>
 
 
     <div class="form-group col-md-6">
       <label for="inputPassword4">Outros</label>
-      <input type="text" class="form-control"  onkeyup="k(this);" id="inputPassword4" name="array[0][outros]"  placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">    </div>
+      <input type="text" class="form-control"  onkeyup="k(this);" id="inputPassword4" name="outros"  placeholder="" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">    </div>
    </div>
 
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Vale</label>
-      <input type="text" class="form-control"  onkeyup="k(this);" name="array[0][vale]"  onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+      <input type="text" class="form-control"  onkeyup="k(this);" name="vale"  onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
   </div>
 
 
 
   <div class="form-group col-md-6">
       <label for="inputPassword4">Comissão</label>
-  <select id="Dia" class="form-control" name="array[0][comissao]">
+  <select id="Dia" class="form-control" name="comissao">
                             <option selected></option>
                             <option value="1%">1%</option>
                             <option value="2%">2%</option>
@@ -330,47 +321,13 @@ return false;
                   </div>
 
 
-
-  <?php 
-
-/* 
-
-
-
-<!--
-  <div class="form-group">
-    <label for="inputAddress">Endereço</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0 readonly>
   </div>
-  <div class="form-group">
-    <label for="inputAddress2">Endereço 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">Cidade</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputEstado">Estado</label>
-      <select id="inputEstado" class="form-control">
-        <option selected>Escolher...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputCEP">CEP</label>
-      <input type="text" class="form-control" id="inputCEP">
-    </div>
-  </div>
-  <div class="form-group">
-  -->
 
-*/
-?>
 
-  </div>
-  <button type="submit" name="btnSubmit" class="btn btn-primary">Cadastrar</button>
+  <input type="submit" class="btn btn-primary" Value="Cadastrar">
+
+
+
 </form>
 
 </div>

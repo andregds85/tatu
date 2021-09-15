@@ -30,25 +30,12 @@
 <?php include("topo.php"); ?>
       <p></p>
       
-      <!-- Fluid Jumbotron --> 
-      
-  <div class="container-fluid">      
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Covid19</h1>
-    <p class="lead">Cadastro de Usuários</p>
-  </div>
-  </div>
-   </div>    
-      
-      
-   <!-- Inserir Usuário -->      
+ 
       
  <div class="container-fluid">    
 
   <form class="was-validated"  name="regform" method="POST" action="gravaUScovid.php" onsubmit="return valida()">
  
-  <!-- nome e sobrenome -->    
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="nome">Nome</label>

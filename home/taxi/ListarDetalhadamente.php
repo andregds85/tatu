@@ -95,8 +95,6 @@ echo "<table>";
   $vetor[] = array();
   $soma=0;
   //exibe os produtos selecionados 
-
-
 ?>
   <table class="table table-hover">
   <thead>
@@ -106,8 +104,6 @@ echo "<table>";
       <th scope="col">Destino</th>
       <th scope="col">Pagamento</th>
       <th scope="col">Valor</th>
-      
-
       <th scope="col">Soma</th>
     </tr>
  </thead> 
@@ -161,7 +157,6 @@ echo "<table>";
 
 
 
-
     echo "</tr>";        
     echo"</tbody>"; 
 
@@ -182,7 +177,6 @@ echo "<table>";
 
 
 echo "<tr>";
-
 echo "<td scope='col'>";
 echo $cartao;
 echo "</td>";
@@ -203,3 +197,91 @@ echo "</tr>";
 
 <input type="button" value="inprimir" onclick="window.print()"/>
 
+
+<?php 
+
+
+echo "</table>";
+
+echo "<hr>";
+
+echo "<table>";
+
+  //seleciona todos os itens da tabela 
+  $cmd = "select * from completa"; 
+  $produtos = mysqli_query($con,$cmd); 
+
+  //conta o total de itens 
+  $total = mysqli_num_rows($produtos); 
+
+  //seta a quantidade de itens por página, neste caso, 2 itens 
+  $registros = 10000; 
+
+  //calcula o número de páginas arredondando o resultado para cima 
+  $numPaginas = ceil($total/$registros); 
+
+
+  //seleciona os itens por página 
+  $cmd = "select * from completa where dataAtual	 = '$data'";  
+  $produtos = mysqli_query($con,$cmd); 
+  echo "<b>";
+  echo "Total de Corridas : ".$total = mysqli_num_rows($produtos); 
+  echo "<br>";
+  $vetor[] = array();
+  $soma=0;
+  //exibe os produtos selecionados 
+?>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">COD/PLACA</th>
+      <th scope="col">Hora Inical</th>
+      <th scope="col">Hora Final</th>
+      <th scope="col">Total em Horas</th>
+      <th scope="col">Total em Minutos</th>
+    </tr>
+ </thead> 
+
+<?php
+
+    $cartao=0;
+    $dinheiro=0;
+
+  while ($produto = mysqli_fetch_array($produtos)) { 
+           
+    echo "<tbody>";
+    echo"<tr>";
+    echo "<th scope='row'>";
+    echo $produto['codPlaca'];  
+    echo "</a>";     
+    echo "</th>";  
+    echo "<td>";
+    echo $produto['horaInicial']; 
+    $hi=$produto['horaInicial']; 
+    echo"</td>";
+    echo "<td>";
+    echo $produto['horaFinal']; 
+    $hf=$produto['horaFinal']; 
+    echo"</td>";    
+
+    
+$string1 = strtotime($hi);
+$string2 = strtotime($hf);
+
+
+$intervalo  = abs($string2 - $string1);
+var_dump('Diferença em segundos: ' . $intervalo);
+
+$minutos   = round($intervalo / 60, 2);
+var_dump('Diferença em minutos: ' . $minutos);
+
+$horas   = round($minutos / 60, 2);
+var_dump('Diferença em horas: ' . $horas);
+
+    echo "<td>";
+    var_dump($horas);
+    echo"</td>";    
+
+} 
+
+?>

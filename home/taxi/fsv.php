@@ -62,17 +62,12 @@ $res = mysqli_query($con, $comando20);
 </div>      
 
     <h1 class="display-4" >Taxi Floripa</h1>
+    <h3>Baixe o aplicativo para Android </h3>
+    <a href="app/taxifloripa.apk">Download</a>
     <p class="lead"></p>
   </div>
   </div>
-      
-      
-
-
-  
-           
- 
-   
+    
       
         
   <?php include("rodapeLimpo.php"); ?>
