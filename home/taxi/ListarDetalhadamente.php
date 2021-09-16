@@ -2,21 +2,13 @@
 include ("session.php"); 
 include ("topoLimpo.php");
 header("Content-Type: text/html; charset=ISO-8859-1");
-echo $id=$_GET['cod'];
+$id=$_GET['cod'];
 include("../conecta.php");
        
 ?>
   
  
- <table class="table table-hover">
-  <thead>
-    <tr>
-    <th scope="col">ID</th>
-      <th scope="col">Data</th>
-      <th scope="col">Destino</th>
-      <th scope="col">Valor</th>
-    </tr>
- </thead>  
+
 <?php          
     //verifica a página atual caso seja informada na URL, senão atribui como 1ª página 
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1; 
@@ -38,37 +30,25 @@ include("../conecta.php");
     //seleciona os itens por página 
     $cmd = "select * from corridas where Id = '$id'";  
     $produtos = mysqli_query($con,$cmd); 
-    echo "<b>";
-    echo "Total de Registros : ".$total = mysqli_num_rows($produtos); 
-    echo "<br>";
+    $total = mysqli_num_rows($produtos); 
      
     //exibe os produtos selecionados 
     while ($produto = mysqli_fetch_array($produtos)) { 
              
-      echo "<tbody>";
-      echo"<tr>";
-      echo "<th scope='row'>";
       echo "<a href='ListarDetalhadamente.php?cod=$produto[Id]'>"; 
-      echo $produto['Id'];  
+      $produto['Id'];  
       echo "</a>";     
-      echo "</th>";  
-      echo "<td>";
-      echo $data=$produto['data']; 
-      echo"</td>";
-      echo "<td>";
-      echo $produto['destino']; 
-      echo"</td>";    
-      echo "<td>";
-      echo $produto['valor']; 
-      echo"</td>";
-      echo "</tr>";        
-      echo"</tbody>";  
+
+      $data=$produto['data']; 
+   
+      $produto['destino']; 
+     
+      $produto['valor']; 
+    
   } 
 
 
-echo "</table>";
 
-echo "<hr>";
 
 echo "<table>";
 
@@ -89,9 +69,7 @@ echo "<table>";
   //seleciona os itens por página 
   $cmd = "select * from corridas where data = '$data'";  
   $produtos = mysqli_query($con,$cmd); 
-  echo "<b>";
-  echo "Total de Corridas : ".$total = mysqli_num_rows($produtos); 
-  echo "<br>";
+  $total = mysqli_num_rows($produtos); 
   $vetor[] = array();
   $soma=0;
   //exibe os produtos selecionados 
@@ -99,7 +77,6 @@ echo "<table>";
   <table class="table table-hover">
   <thead>
     <tr>
-    <th scope="col">ID</th>
       <th scope="col">Data</th>
       <th scope="col">Destino</th>
       <th scope="col">Pagamento</th>
@@ -117,11 +94,6 @@ echo "<table>";
            
     echo "<tbody>";
     echo"<tr>";
-    echo "<th scope='row'>";
-    echo "<a href='ListarDetalhadamente.php?cod=$produto[Id]'>"; 
-    echo $produto['Id'];  
-    echo "</a>";     
-    echo "</th>";  
     echo "<td>";
     echo $produto['data']; 
     echo"</td>";
@@ -225,7 +197,7 @@ echo "<table>";
   $cmd = "select * from completa where dataAtual	 = '$data'";  
   $produtos = mysqli_query($con,$cmd); 
   echo "<b>";
-  echo "Total de Corridas : ".$total = mysqli_num_rows($produtos); 
+  $total = mysqli_num_rows($produtos); 
   echo "<br>";
   $vetor[] = array();
   $soma=0;
@@ -237,8 +209,6 @@ echo "<table>";
     <th scope="col">COD/PLACA</th>
       <th scope="col">Hora Inical</th>
       <th scope="col">Hora Final</th>
-      <th scope="col">Total em Horas</th>
-      <th scope="col">Total em Minutos</th>
     </tr>
  </thead> 
 
@@ -269,19 +239,234 @@ $string1 = strtotime($hi);
 $string2 = strtotime($hf);
 
 
+?>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">Horas Trabalhadas</th>
+      <th scope="col">Minutos Trabalhados</th>
+      <th scope="col">Segundos Trabalhados</th>
+
+    </tr>
+ </thead> 
+
+
+ <?php 
+
+
 $intervalo  = abs($string2 - $string1);
-var_dump('Diferença em segundos: ' . $intervalo);
 
 $minutos   = round($intervalo / 60, 2);
-var_dump('Diferença em minutos: ' . $minutos);
 
 $horas   = round($minutos / 60, 2);
-var_dump('Diferença em horas: ' . $horas);
 
-    echo "<td>";
-    var_dump($horas);
-    echo"</td>";    
+
+echo "<tbody>";
+echo"<tr>";
+echo "<th scope='row'>";
+echo $horas;  
+echo "</a>";     
+echo "</th>";  
+echo "<td>";
+echo $minutos; 
+echo"</td>";
+echo "<td>";
+echo $intervalo;
+echo"</td>";    
+echo"</tr>";
+echo "</table>";
+
+
+?>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">Motorista</th>
+      <th scope="col">Kilometro Inicial</th>
+      <th scope="col">Kilometro Final</th>
+    </tr>
+ </thead> 
+
+<?php
+
+echo "<tbody>";
+echo"<tr>";
+echo "<th scope='row'>";
+echo $produto['nome'];  
+echo "</a>";     
+echo "</th>";  
+echo "<td>";
+echo $inicio=$produto['kInicial'];  
+$k1 = floatval($produto['kInicial']);
+echo"</td>";
+echo "<td>";
+echo $fim=$produto['kfinal'];  
+$k2 = floatval($produto['kfinal']);
+
+echo"</td>";    
+echo"</tr>";
+echo "</tbody>";
+echo "</table>";
+
+
+?>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">Total de Kilometros</th>
+      <th scope="col">GNV</th>
+      <th scope="col">Gasolina</th>
+    </tr>
+ </thead> 
+
+<?php
+
+echo "<tbody>";
+echo"<tr>";
+echo "<th scope='row'>";
+$tk=$k2-$k1;
+echo $tk;
+echo "</th>";  
+echo "<td>";
+echo $gnvl=$produto['gnv'];  
+$gnv = floatval($gnvl);
+
+echo"</td>";
+echo "<td>";
+echo $gasolina1=$produto['gasolina'];  
+$gasolina = floatval($gasolina1);
+echo"</td>";    
+echo"</tr>";
+echo "</tbody>";
+echo "</table>";
+
+?>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">Lavagem</th>
+      <th scope="col">Outros</th>
+      <th scope="col">Total(GNV+GASOL+LAV+OUTR)</th>
+    </tr>
+ </thead> 
+
+<?php
+
+echo "<tbody>";
+echo"<tr>";
+echo "<td>";
+echo $lavacaol=$produto['lavacao'];  
+$lavacao = floatval($lavacaol);
+echo "</th>";  
+echo "<td>";
+echo $outrosl=$produto['outros'];  
+$outros = floatval($outrosl);
+echo"</td>";
+echo "<td>";
+
+$totalDespesa = $gnv+$gasolina+$lavacao+$outros; 
+echo $totalDespesa;
+
+echo"</td>";    
+echo"</tr>";
+echo "</tbody>";
+echo "</table>";
+
+
+?>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">Vale</th>
+      <th scope="col">Total (Corridas - Vale)</th>
+      <th scope="col">Porcentagem da Comissao</th>
+
+      <th scope="col">Comissao</th>
+    </tr>
+ </thead> 
+
+<?php
+
+echo "<tbody>";
+echo"<tr>";
+echo "<td>";
+echo $vale1=$produto['vale'];  
+$vale = floatval($vale1);
+echo "<td>";
+$meuArray=array_sum($vetor);
+echo $v=$meuArray-$vale;
+echo"</td>";
+
+
+echo "<td>";
+echo $c=$produto['comissao'];  
+echo"</td>";
+
+
+echo "<td>";
+$co=$produto['comissao']; 
+$com = floatval($co);
+
+echo ($v * $com)/100;
+echo"</td>";    
+echo"</tr>";
+echo "</tbody>";
+echo "</table>";
+
+
+?>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">Diaria</th>
+      <th scope="col">Liquido</th>
+      <th scope="col">Envelope</th>
+
+    </tr>
+ </thead> 
+
+
+<?php
+
+echo "<tbody>";
+echo"<tr>";
+echo "<td>";
+$comissao=($v * $com)/100;
+$diaria=$comissao-$vale;
+echo $diaria;
+echo "</td>";
+
+
+echo "<td>";
+$comissao=($v * $com)/100;
+$diaria=$comissao-$vale;
+echo $tudo=array_sum($vetor)-$totalDespesa-$diaria;
+echo "</td>";
+
+
+
+
+echo "<td>";
+$envelope=$tudo-$cartao;
+echo $tudo=array_sum($vetor)-$totalDespesa-$diaria;
+echo "</td>";
+
+
+echo"</tr>";
+echo "</tbody>";
+echo "</table>";
 
 } 
+
+
 
 ?>
