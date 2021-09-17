@@ -47,100 +47,16 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <a class="dropdown-item" href="completaCorrida.php">Completando Corrida</a>
-        <a class="dropdown-item" href="import.php">Listar Completando Corrida</a>
-        <a class="dropdown-item" href="import.php">Importar estabelecimento de Saude</a>
    
       
                  
             
      
         </div>
-      </li>
-        
-         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        CadastrodeCorridas.php          
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="frmCadastra.php">Cadastro de Pacientes Internados em Leitos de Uti Confirmados/Suspeitos/Descartados</a>
-           
-            
-           <a class="dropdown-item" href="listarPacientesUti.php">Listar  Pacientes Internados em Leitos de Uti Confirmados/Suspeitos/Descartados</a>    
-            
-            
-            
-           
-            
-     <a class="dropdown-item" href="confirmadosLuti.php">Listar  Pacientes Internados em Leitos de Uti Confirmados</a>    
-            
-         
-     <a class="dropdown-item" href="descartadosLuti.php">Listar  Pacientes Internados em Leitos de Uti Descartados</a>      
-            
-      <a class="dropdown-item" href="suspeitosLuti.php">Listar  Pacientes Internados em Leitos de Uti Suspeitos</a>        
-            
-      <a class="dropdown-item" href="grafico.php">Grafico</a>             
-     
-         
-            
-             <a class="dropdown-item" href="importLeitosUti.php">importar Pacientes Internados em Leitos de Uti Confirmados/Suspeitos/Descartados</a>
-            
           
-               
-          <a class="dropdown-item" href="exportaCovidConfirmados.php">Exporta Pacientes Internados em Leitos de Uti Confirmados</a>
-            
-           <a class="dropdown-item" href="exportaCovidSuspeitos.php">Exporta Pacientes Internados em Leitos de Uti Suspeitos</a>  
-            
-           <a class="dropdown-item" href="exportaCovidDescartados.php">Exporta Pacientes Internados em Leitos de Uti Descartados</a>  
-            
-          <a class="dropdown-item" href="exportaCovidConfirmadosSuspeitosDescartados.php">Exporta Pacientes Internados em Leitos de Uti Confirmados/Suspeitos/Descartados</a>      
-            
-            
-        
-                     
-             
-            
-            
-            
-          <a class="dropdown-item" href="https://drive.google.com/file/d/1VhBvhY0mAap-tUwoPf_9OwD9S71zlkkg/view?usp=sharing">Video como importar os Pacientes Internados em Leitos de Uti Confirmados/Suspeitos</a>      
-            
-        </div>
-      </li>                         
         
            
-        
-        
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Alta Uti Leitos clinicos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="frmCadastraAltaUti.php">Cadastro Alta Uti Leitos Clinicos </a>
-
-
-             <a class="dropdown-item" href="listarAltasLeitosclinicos.php">Listar  Alta Uti Leitos Clinicos </a>
            
-              <a class="dropdown-item" href="importAltaLeitosClinicos.php">importar Alta em Leitos de Clinicos</a>    
-              
-            
-             <a class="dropdown-item" href="graficoAltaLeitoClinico.php">Grafico</a> 
-            
-            
-            
-            <a class="dropdown-item" href="https://drive.google.com/file/d/11LofhOtr8exJV6AjN8YeJw_cZAftmNqd/view?usp=sharing">Video mostrando como Construir gráfico Alta em Leitos de Clinicos</a> 
-            
-            
-            
-            
-            <a class="dropdown-item" href="https://drive.google.com/file/d/1LtY7Sx7fZoRRBHKeYcZttdT55AxIh1aQ/view?usp=sharing">Video mostrando como importar Alta em Leitos de Clinicos</a>    
-            
-            
-     
-        </div>
-      </li>
-        
-        
-        
-        
         
         
         

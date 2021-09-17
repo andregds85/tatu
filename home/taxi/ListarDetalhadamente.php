@@ -47,6 +47,7 @@ include("../conecta.php");
     
   } 
 
+  $money[] = array();
 
 
 
@@ -118,6 +119,8 @@ echo "<table>";
     if ($produto['pagamento']=="dinheiro"){
 
       $dinheiro=$dinheiro+$float;
+      $money[] =$dinheiro;
+
 
     }
 
@@ -453,13 +456,12 @@ echo $tudo=array_sum($vetor)-$totalDespesa-$diaria;
 echo "</td>";
 
 
-
-
 echo "<td>";
-$envelope=$tudo-$cartao;
-echo $tudo=array_sum($vetor)-$totalDespesa-$diaria;
-echo "</td>";
+$envelope=$tudo-(array_sum($money));
 
+echo ($envelope);
+
+echo "</td>";
 
 echo"</tr>";
 echo "</tbody>";
